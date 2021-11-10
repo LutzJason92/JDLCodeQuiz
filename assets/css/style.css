@@ -1,0 +1,53 @@
+* {
+  font-family: "Share Tech Mono", monospace;
+  background-color: lightslategray;
+}
+
+h1 {
+  text-align: center;
+  color: aqua;
+  background-color: rgb(126, 96, 126);
+}
+
+header {
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  border: solid white 10px;
+  padding: 5px;
+}
+
+div h3 {
+  text-align: center;
+}
+
+timer h3 {
+  text-align: center;
+  border-bottom: solid cyan 5px;
+  padding: 15px;
+}
+
+container {
+  text-align: center;
+}
+
+container h2 {
+  padding: 30px;
+  text-align: center;
+}
+
+container h3 {
+  border-bottom: solid cyan 5px;
+  padding: 30px;
+}
+
+/* 
+// #highscores {
+  text-align: left;
+  margin-left: 35px;
+}
+
+#timer {
+  text-align: end;
+  margin-right: 35px;
+} */

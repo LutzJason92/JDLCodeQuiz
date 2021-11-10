@@ -3,6 +3,10 @@
   background-color: lightslategray;
 }
 
+body {
+  text-align: center;
+}
+
 h1 {
   text-align: center;
   color: aqua;
@@ -17,30 +21,17 @@ header {
   padding: 5px;
 }
 
-div {
-  text-align: center;
-}
-
-div h3 {
-  text-align: center;
-}
-
 timer h3 {
-  text-align: center;
-  border-bottom: solid cyan 5px;
-  padding-bottom: 15px;
-}
-
-container {
   text-align: center;
 }
 
 container h2 {
   padding: 5px;
-  text-align: center;
+  border-top: solid cyan 5px;
+  padding-top: 15px;
 }
 
-container h3 {
+container ul {
   border-bottom: solid cyan 5px;
   padding: 15px;
 }
@@ -49,14 +40,3 @@ container h3 {
   margin-top: 20px;
   font-size: larger;
 }
-
-/* 
-// #highscores {
-  text-align: left;
-  margin-left: 35px;
-}
-
-#timer {
-  text-align: end;
-  margin-right: 35px;
-} */

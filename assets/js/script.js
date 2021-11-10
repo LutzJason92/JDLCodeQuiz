@@ -75,13 +75,17 @@ function startTimer (){
 };
 
 function questions(){
-        beginQuestion1.textContent = "question Place Holder"
+    //proves content is pushed to page
+        //beginQuestion1.textContent = "question Place Holder"
         displayAnswers.textContent = "answer Place holder"
 
         for (var i = 0; i < quizQuestions.length; i++)
+        // assigns variable ID 'displayQuestion' to the questions within quizQuestions array 
             var displayQuestion = quizQuestions[questionAndanswersArray].question
+
+        // assigns variable ID 'displayChoices'
             var displayChoices = quizQuestions[questionAndanswersArray].choices;
-            beginQuestion1.textContent = displayQuestion;
+            displayAnswers.textContent = displayChoices;
     
 };
 

@@ -81,7 +81,9 @@ function questions(){
 
         for (var i = 0; i < quizQuestions.length; i++)
         // assigns variable ID 'displayQuestion' to the questions within quizQuestions array 
-            var displayQuestion = quizQuestions[questionAndanswersArray].question
+            var displayQuestion = quizQuestions[questionAndanswersArray].question;
+            beginQuestion1.textContent = displayQuestion;
+
 
         // assigns variable ID 'displayChoices'
             var displayChoices = quizQuestions[questionAndanswersArray].choices;

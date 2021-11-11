@@ -7,22 +7,39 @@ body {
   text-align: center;
 }
 
-h1 {
-  text-align: center;
-  color: aqua;
-  background-color: rgb(126, 96, 126);
-}
-
 header {
   text-align: center;
   box-sizing: border-box;
   width: 100%;
-  border: solid white 10px;
-  padding: 5px;
+  border: solid white 5px;
+}
+
+header h1 {
+  text-align: center;
+  border: 2.5px solid cyan;
+  background-color: rgb(126, 96, 126);
+}
+
+p {
+  font-size: 1.5em;
+  color: orange;
+}
+
+div a {
+  color: aqua;
+  font-size: 1.25em;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+ol {
+  list-style: none;
 }
 
 timer h3 {
+  color: aliceblue;
   text-align: center;
+  font-weight: 600;
 }
 
 container h2 {
@@ -33,10 +50,14 @@ container h2 {
 
 container ul {
   border-bottom: solid cyan 5px;
-  padding: 15px;
+  padding-bottom: 40px;
 }
 
 #button {
   margin-top: 20px;
-  font-size: larger;
+  font-size: 1.75em;
+  padding: 10px;
+  background-color: rgb(126, 96, 126);
+  font-weight: bolder;
+  border: 2.5px solid cyan;
 }

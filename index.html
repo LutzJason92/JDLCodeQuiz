@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&       display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&      display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Welcome to my Code Quiz!</h1>   
         <div> 
-            <a id="highscores" href="highscores.html">
-                View Highscores</a>
+            <a id="highscores" href="highscores.html">View Highscores</a>
         </div>    
     </header>
     <div class="div">
@@ -23,16 +23,23 @@
     </div>
 
     <timer> 
-    <h3 id="timer"></h3> 
+    <h3 id="timer">This quiz is timed.</h3> 
     </timer>
     
     <container class="quizContainer">
-        <h2 id="questions">RULES:</h2>
-        <ul id="answers"> SELECT AN ANSWER. IF YOUR CHOICE IS WRONG, THE TIMER WILL BE PENALIZED BY 10 SECONDS. WHEN YOU'RE READY, CLICK 'START QUIZ'. GOOD LUCK!
-        </ul>
+        <h1 id="questions"><span style="color: cyan" style="font-size: 2.5em;">RULES:</span>  SELECT AN ANSWER. IF YOUR CHOICE IS WRONG, THE TIME WILL BE REDUCED BY 10 SECONDS. WHEN YOU'RE READY, CLICK <span style="color: cyan" style="font-size: 2.5em;">"START QUIZ"</span>. GOODLUCK!</h1>
+        <h2> 
+            <ol id="answers">
+                <button  id="choice1" ></button>
+                <button  id="choice2" ></button>
+                <button  id="choice3" ></button>
+                <button  id="choice4" ></button>
+                
+            </ol>
+        </h2>
         
     </container>
-    <p>YOU GOT THIS</p>
+    <p id= "rightWrong">YOU GOT THIS</p>
 
     <script src="./assets/js/script.js"></script>
 </body>

@@ -36,6 +36,15 @@ ol {
   list-style: none;
 }
 
+button {
+  margin-top: 20px;
+  font-size: 1em;
+  padding: 10px;
+  background-color: rgb(126, 96, 126);
+  font-weight: bolder;
+  border: 2.5px solid cyan;
+}
+
 timer h3 {
   color: aliceblue;
   text-align: center;

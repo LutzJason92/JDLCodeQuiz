@@ -10,6 +10,10 @@ var choicesArray3 = document.getElementById("choice3")
 var choicesArray4 = document.getElementById("choice4")
 var displayScore =  document.getElementById("points")
 
+//get local storage
+
+//set item in code below, stringify
+
 // questionAndanswersArray
 var quizQuestions = [
 
@@ -101,7 +105,7 @@ function judgeMent(event){
          var displayAnswers = quizQuestions[quizQa].answer;
    
        if (displayAnswers === displayChoices.textContent){
-            displayValue.textContent = "NICE!";
+            displayValue.textContent = "NICE! +1 Points!";
             points += 1;
             displayScore.textContent = points;
             console.log(points);
@@ -109,7 +113,7 @@ function judgeMent(event){
             
         } else {
             secondsLeft = secondsLeft - penalty;
-            displayValue.textContent = "TRY AGAIN" ; 
+            displayValue.textContent = "TRY AGAIN -5 seconds!" ; 
         }
     }
       
@@ -121,8 +125,6 @@ function judgeMent(event){
 
 function gameOver() {
     
-
-    // console.log("gameOver");
-   //window.location.replace("highscores.html");
+   window.location.replace("highscores.html");
    
 };

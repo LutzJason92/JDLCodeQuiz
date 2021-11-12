@@ -17,11 +17,15 @@ var choicesArray4 = $("#choice4");
 
 var displayScore = $("#points")
 
+var highScores = $("#highscores")
+
+var userInitials = ""
 
 
 
 
-var quixIndex = 0
+
+var quizIndex = 0;
 //get local storage
 
 //set item in code below, stringify
@@ -85,7 +89,7 @@ var quizQuestions = [
     }
 ];
 
-
+var points = displayScore;
 var quizIndex = 0;
 var penalty = 5;
 var secondsLeft = 5000;
@@ -99,7 +103,6 @@ document.getElementById("choice1").addEventListener('click', checkAnswer)
 document.getElementById("choice2").addEventListener('click', checkAnswer)
 document.getElementById("choice3").addEventListener('click', checkAnswer)
 document.getElementById("choice4").addEventListener('click', checkAnswer)
-
 
 function startTimer (){
     var timerInterval = setInterval(function() {
@@ -121,8 +124,6 @@ function startTimer (){
       
     renderQuestion() 
 };
-
-
 function renderQuestion(){
     if (quizIndex < quizQuestions.length){
         userQuestions.text(quizQuestions[quizIndex].question);
@@ -131,11 +132,7 @@ function renderQuestion(){
         choicesArray3.text(quizQuestions[quizIndex].choice3);
         choicesArray4.text(quizQuestions[quizIndex].choice4);
 
-
-
-
     } else {
-
         gameOver()
     }
 
@@ -147,45 +144,51 @@ function renderQuestion(){
 
 function checkAnswer(event) {
   
-    var displayAnswers = quizQuestions[quixIndex].answer;
+    var displayAnswers = quizQuestions[quizIndex].answer;
     
     
     // if (quizQuestions[quizIndex].answer === event.target.outerText)
     if (quizQuestions[quizIndex].answer === event.target.outerText) {
-     
-     displayValue.text("NICE! +1 Points!")
-     points ++;
+    points += 1;
+    displayValue.text("NICE! +1 Points!");
     quizIndex++;
+    renderQuestion()
     } else { 
      secondsLeft = secondsLeft - penalty;
      displayValue.text("TRY AGAIN -5 seconds!") 
     }
     
-    renderQuestion()
-    
 };
- 
 
-
-// function userChoices2(){
-//     var displayQuestion = quizQuestions[0].arQuestion1;
-//     userQuestions.textContent = displayQuestion;
+function userStats(){
+    const userData = JSON.parse(localstorage.getItem("data")) || [];
     
-//     var displayChoices1 = quizQuestions[0].choice1;
-//     choicesArray1.textContent = displayChoices1
-//     var displayChoices2 = quizQuestions[0].choice2;
-//     choicesArray2.textContent = displayChoices2
-//     var displayChoices3 = quizQuestions[0].choice3;
-//     choicesArray3.textContent = displayChoices3
-//     var displayChoices4 = quizQuestions[0].choice4;
-//     choicesArray4.textContent = displayChoices4   
-//     //  renderChoices2()
-//     }
+    const dataEntry = { initials : userInitials, score : points };
 
+    userData.push(dataEntry);
+
+    localStorage.setItem("data", JSON.stringify(userData));
+    
+    console.log(userData)
+    
+    let template = " "
+    for (let i = 0; i < allData.legnth; i++) {
+        template += `<li> ${ userData[i].initials} ${userData[i].score}</li>`;
+    }
+    $("#highscores").append(template);
+    quizIndex = 0;
+
+    console.log(userData)
+}
 
 
 function gameOver() {
-    
-   window.location.replace("highscores.html");
-   
+clearInterval(secondsLeft);
+alert("QUIZ OVER");
+ userInitials = prompt("ENTER YOUR INITIALS FOR BRAGGING RIGHTS!")
+
+   userStats()
+   console.log(points)
+   console.log(userInitials)
+//  window.location.replace("highscores.html")
 };

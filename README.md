@@ -1,6 +1,12 @@
 # JDLCodeQuiz
 
-UNit 4 Homework Due 11.10.2021
+Unit 4 Homework Due 11.11.2021
+
+Problems as of 11.11.21 1150pm
+
+-changed from vanilla JS to Jquery this afternoon after class.
+will
+-local storage not working
 
 Your Task
 At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment—perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges.
@@ -27,6 +33,7 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 
-Box Model
+![GitHubRepo](https://github.com/LutzJason92/JDLCodeQuiz)
+![DeployedPage](https://lutzjason92.github.io/JDLCodeQuiz/)
 
-![BoxModel](./assets/images/CodeQuiz-Box-Model.png)
+![ScreenShot](./assets/images/APPScreenShot.png)

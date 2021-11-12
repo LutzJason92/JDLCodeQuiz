@@ -1,50 +1,94 @@
 // // //DECLARE VARIABLES
 
-var startCountDown = document.getElementById("timer")
-var userQuestions = document.getElementById("questions")
-var displayAnswers = document.getElementById("answers")
-var displayValue = document.getElementById("rightWrong")
-var choicesArray1 = document.getElementById("choice1")
-var choicesArray2 = document.getElementById("choice2")
-var choicesArray3 = document.getElementById("choice3")
-var choicesArray4 = document.getElementById("choice4")
-var displayScore =  document.getElementById("points")
+var startCountDown = document.getElementById("timer");
+var userQuestions = document.getElementById("questions");
+var displayAnswers = document.getElementById("answers");
+var displayValue = document.getElementById("rightWrong");
+var choicesArray1 = document.getElementById("choice1");
+var choicesArray2 = document.getElementById("choice2");
+var choicesArray3 = document.getElementById("choice3");
+var choicesArray4 = document.getElementById("choice4");
+var displayScore =  document.getElementById("points");
 
 //get local storage
 
 //set item in code below, stringify
 
-// questionAndanswersArray
+// questionAndanswersArray key value pairs
 var quizQuestions = [
 
-    { question : "The following is an example of what? var = studentNames = [ “Jason”, “Moe”, “Collin”, “Olivia”]",
-    choices : ["a string", "an array", "comma notation", "a function"],
-    answer : "an array" },
+    { 
+        
+    arQuestion1 : "The following is an example of what? var = studentNames = [ “Jason”, “Moe”, “Collin”, “Olivia”]",
+        choice1 : ["a string"],
+        choice2 : ["an array"],
+        choice3 : ["comma notation"],
+        choice4 : ["a function"],
+    answer : "an array" 
+    
+    },
 
-   { question : "sample 2",
-    choices : [ 1, 2, 3, 4 ],
-    answer : 2 },
+    { 
+    
+    arQuestion2 : "sample 2",
+        choice1 : ["a"],
+        choice2 : ["b"],
+        choice3 : ["c"],
+        choice4 : ["d"],
+    answer : "c" 
+    
+    },
 
-    { question : "sample3",
-    choices : ["z", "y", "x", "w"],
-    answer : "w" },
+    { 
+        
+    arQuestion3 : "sample 3",
+        choice1 : ["a"],
+        choice2 : ["b"],
+        choice3 : ["c"],
+        choice4 : ["d"],
+    answer : "c" 
 
-    { question : "sample 4",
-    choices : [ 9, 8, 7, 6 ],
-    answer : 8 }
+    },
+    
+    { 
+        
+    arQuestion4 : "sample 4",
+        choice1 : ["a"],
+        choice2 : ["b"],
+        choice3 : ["c"],
+        choice4 : ["d"],
+    answer : "c" 
+
+    },
+    
+    { 
+        
+    arQuestion5 : "sample 5",
+        choice1 : ["a"],
+        choice2 : ["b"],
+        choice3 : ["c"],
+        choice4 : ["d"],
+    answer : "c" 
+    
+    }
 ];
 
-var quizQa = 0;
+
+var quizIndex = 0;
 var penalty = 5;
-var secondsLeft = 35;
+var secondsLeft = 5000;
 var points = 0;
 
 //EventListener - button clicks
-document.getElementById("button").addEventListener('click', startTimer);
-document.getElementById("choice1").addEventListener('click', judgeMent);
-document.getElementById("choice2").addEventListener('click', judgeMent);
-document.getElementById("choice3").addEventListener('click', judgeMent);
-document.getElementById("choice4").addEventListener('click', judgeMent);
+document.querySelector("#startButton").addEventListener('click', startTimer);
+// document.querySelector(".buttons").onclick = function(){userChoices1()}
+
+document.getElementById("choice1").addEventListener('click', checkAnswer)
+document.getElementById("choice2").addEventListener('click', checkAnswer)
+document.getElementById("choice3").addEventListener('click', checkAnswer)
+document.getElementById("choice4").addEventListener('click', checkAnswer)
+
+
 
 
 
@@ -68,60 +112,85 @@ function startTimer (){
         }
       }, 1000); //milliseconds
       
-    question1() 
+    renderQuestion1() 
+};
+//renderQuestion()
+
+
+function renderQuestion1(){
+    var displayQuestion = quizQuestions[0].arQuestion1;
+    userQuestions.textContent = displayQuestion; 
+     
+     userChoices1()
+    }
+
+
+function userChoices1(){
+    
+    
+    var displayChoices1 = quizQuestions[0].choice1;
+    choicesArray1.textContent = displayChoices1
+    var displayChoices2 = quizQuestions[0].choice2;
+    choicesArray2.textContent = displayChoices2
+    var displayChoices3 = quizQuestions[0].choice3;
+    choicesArray3.textContent = displayChoices3
+    var displayChoices4 = quizQuestions[0].choice4;
+    choicesArray4.textContent = displayChoices4
 };
 
-function question1(){
-        for (var i = 0; i < quizQuestions.length; i++){
-        
-            var displayQuestion = quizQuestions[quizQa].question;
-            userQuestions.textContent = displayQuestion;
-        };
-        
-        for (var i = 0; i < quizQuestions.length; i++ ){ 
-            
-            var displayChoices = quizQuestions[quizQa].choices[i];
-            
-            if (i == 0) {
-                choicesArray1.textContent = displayChoices
-            }
-            if (i == 1) {
-                choicesArray2.textContent = displayChoices
-            }
-            if (i == 2) {
-                choicesArray3.textContent = displayChoices
-            }
-            if (i == 3) {
-                choicesArray4.textContent = displayChoices
-            } 
-                
-        }
+function checkAnswer(event) {
+    var displayChoices1 = quizQuestions[0].choice1;
+    choicesArray1.textContent = displayChoices1
+    var displayChoices2 = quizQuestions[0].choice2;
+    choicesArray2.textContent = displayChoices2
+    var displayChoices3 = quizQuestions[0].choice3;
+    choicesArray3.textContent = displayChoices3
+    var displayChoices4 = quizQuestions[0].choice4;
+    choicesArray4.textContent = displayChoices4
+    var displayAnswers = quizQuestions[0].answer;
     
-}
-function judgeMent(event){
-       var displayChoices = event.target;
-       for (var i = 0; i < 1; i++){
-        
-         var displayAnswers = quizQuestions[quizQa].answer;
-   
-       if (displayAnswers === displayChoices.textContent){
-            displayValue.textContent = "NICE! +1 Points!";
-            points += 1;
-            displayScore.textContent = points;
-            console.log(points);
-            i++;
-            
-        } else {
-            secondsLeft = secondsLeft - penalty;
-            displayValue.textContent = "TRY AGAIN -5 seconds!" ; 
-        }
+    if 
+    
+    (displayAnswers == displayChoices1.textContent, 
+    displayAnswers == displayChoices2.textContent,
+    displayAnswers == displayChoices3.textContent,
+    displayAnswers == displayChoices4.textContent)
+    {
+     displayValue.textContent = "NICE! +1 Points!";
+     points += 1;
+     
+    //  userChoices2()
+     
+    } else { 
+     secondsLeft = secondsLeft - penalty;
+     displayValue.textContent = "TRY AGAIN -5 seconds!" ; 
     }
-      
+    console.log(displayChoices1)
+    console.log(displayChoices2)
+    console.log(displayChoices3)
+    console.log(displayChoices4)
+
+    console.log(displayAnswers)
 }
+ 
 
 
+function userChoices2(){
+    var displayQuestion = quizQuestions[0].arQuestion1;
+    userQuestions.textContent = displayQuestion;
+    
+    var displayChoices1 = quizQuestions[0].choice1;
+    choicesArray1.textContent = displayChoices1
+    var displayChoices2 = quizQuestions[0].choice2;
+    choicesArray2.textContent = displayChoices2
+    var displayChoices3 = quizQuestions[0].choice3;
+    choicesArray3.textContent = displayChoices3
+    var displayChoices4 = quizQuestions[0].choice4;
+    choicesArray4.textContent = displayChoices4   
+    //  renderChoices2()
+    }
 
-// display page after timer is up or questions are over
+
 
 function gameOver() {
     

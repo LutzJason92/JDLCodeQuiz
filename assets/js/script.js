@@ -46,45 +46,45 @@ var quizQuestions = [
 
     { 
     
-    question : "sample 2",
-        choice1 : ["a"],
-        choice2 : ["b"],
-        choice3 : ["c"],
-        choice4 : ["d"],
-    answer : "c" 
+    question : "The technical term for an element wrapped in quotation marks is what?",
+        choice1 : ["a string"],
+        choice2 : ["an object"],
+        choice3 : ["an array"],
+        choice4 : ["a function"],
+    answer : "a string" 
     
     },
 
     { 
         
-    question : "sample 3",
-        choice1 : ["a"],
-        choice2 : ["b"],
-        choice3 : ["c"],
-        choice4 : ["d"],
-    answer : "c" 
+    question : "For Loops are:",
+        choice1 : ["used to execute code more than once"],
+        choice2 : ["include a declaration, condition and an incrementor"],
+        choice3 : ["dependent on defined variables"],
+        choice4 : ["all of the above"],
+    answer : "all of the above" 
 
     },
     
     { 
         
-    question : "sample 4",
-        choice1 : ["a"],
-        choice2 : ["b"],
-        choice3 : ["c"],
-        choice4 : ["d"],
-    answer : "c" 
+    question : "What is the technical term for a parameter that has been assigned a value within a function?",
+        choice1 : ["for loop"],
+        choice2 : ["declaration"],
+        choice3 : ["argument"],
+        choice4 : ["console.log"],
+    answer : "argument" 
 
     },
     
     { 
         
-    question : "sample 5",
-        choice1 : ["a"],
-        choice2 : ["b"],
-        choice3 : ["c"],
-        choice4 : ["d"],
-    answer : "c" 
+    question : "DOM stands for:",
+        choice1 : ["Dusty Old Monitor"],
+        choice2 : ["Document Object Model"],
+        choice3 : ["Declaration Of Model"],
+        choice4 : ["Description Of Methods"],
+    answer : "Document Object Model" 
     
     }
 ];
@@ -190,5 +190,5 @@ alert("QUIZ OVER");
    userStats()
    console.log(points)
    console.log(userInitials)
-//  window.location.replace("highscores.html")
+   window.location.replace("index.html")
 };

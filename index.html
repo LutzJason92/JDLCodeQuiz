@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Quiz</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&      display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&      display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Welcome to my Code Quiz!</h1>   
-        <div> 
-            
-            <p id="points">Points</p>
-        </div>    
+      <h1>Welcome to my Code Quiz!</h1>
+      <a href="./highscores.html">View High Scores</a>
+      <div>
+        <p id="points">Points</p>
+      </div>
     </header>
     <div class="div">
-        <button id="startButton">*START QUIZ*</button>
+      <button id="startButton">*START QUIZ*</button>
     </div>
 
-    <timer> 
-    <h3 id="timer">This quiz is timed.</h3> 
+    <timer>
+      <h3 id="timer">This quiz is timed.</h3>
     </timer>
-    
+
     <container class="quizContainer">
-        <h1 id="questions"><span style="color: cyan" style="font-size: 2.5em;">RULES:</span>  SELECT AN ANSWER. IF YOUR CHOICE IS WRONG, THE TIME WILL BE REDUCED BY 10 SECONDS. WHEN YOU'RE READY, CLICK <span style="color: cyan" style="font-size: 2.5em;">*START QUIZ*</span>. GOODLUCK!</h1>
-        <h2> 
-            <ol class="buttons">
-                <button id="choice1" ></button>
-                <button id="choice2" ></button>
-                <button id="choice3" ></button>
-                <button id="choice4" ></button>
-                
-            </ol>
-        </h2>
-        <h2 class="highscoresCL" id="highscores"></h2>
-        
+      <h1 id="questions">
+        <span style="color: cyan" style="font-size: 2.5em">RULES:</span> SELECT
+        AN ANSWER. IF YOUR CHOICE IS WRONG, THE TIME WILL BE REDUCED BY 10
+        SECONDS. WHEN YOU'RE READY, CLICK
+        <span style="color: cyan" style="font-size: 2.5em">*START QUIZ*</span>.
+        GOODLUCK!
+      </h1>
+      <h2>
+        <ol class="buttons">
+          <button id="choice1"></button>
+          <button id="choice2"></button>
+          <button id="choice3"></button>
+          <button id="choice4"></button>
+        </ol>
+      </h2>
+      <h2 class="highscoresCL" id="highscores"></h2>
     </container>
-    <p id= "rightWrong">YOU GOT THIS</p>
+    <p id="rightWrong">YOU GOT THIS</p>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>

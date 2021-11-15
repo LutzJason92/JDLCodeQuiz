@@ -1,34 +1,19 @@
-// // //DECLARE VARIABLES
+// // //DECLARED VARIABLES
 
 
 var startCountdown = $("#timer");
-
 var userQuestions = $("#questions");
-
 var displayValue = $("#rightWrong")
-
 var choicesArray1 = $("#choice1")
-
 var choicesArray2 = $("#choice2");
-
 var choicesArray3 = $("#choice3");
-
 var choicesArray4 = $("#choice4");
-
 var displayScore = $("#points")
-
 var highScores = $("#highscores")
-
-var userInitials = ""
-
-
-
-
-
 var quizIndex = 0;
 //get local storage
 
-//set item in code below, stringify
+
 
 // questionAndanswersArray key value pairs
 var quizQuestions = [
@@ -89,11 +74,19 @@ var quizQuestions = [
     }
 ];
 
-var points = displayScore;
+var points = 0;
 var quizIndex = 0;
 var penalty = 5;
-var secondsLeft = 5000;
+var secondsLeft = 20;
 var points = 0;
+
+
+
+
+
+
+
+
 
 //EventListener - button clicks
 document.querySelector("#startButton").addEventListener('click', startTimer);
@@ -133,6 +126,7 @@ function renderQuestion(){
         choicesArray4.text(quizQuestions[quizIndex].choice4);
 
     } else {
+        alert("YOU MADE IT!! THE QUIZ IS OVER!! You got " + points + " points" + " with " + secondsLeft + " seconds remaining.")
         gameOver()
     }
 
@@ -143,52 +137,32 @@ function renderQuestion(){
     }
 
 function checkAnswer(event) {
-  
-    var displayAnswers = quizQuestions[quizIndex].answer;
-    
-    
-    // if (quizQuestions[quizIndex].answer === event.target.outerText)
     if (quizQuestions[quizIndex].answer === event.target.outerText) {
-    points += 1;
+    displayScore.text(points += 1)
     displayValue.text("NICE! +1 Points!");
     quizIndex++;
+
     renderQuestion()
     } else { 
      secondsLeft = secondsLeft - penalty;
      displayValue.text("TRY AGAIN -5 seconds!") 
     }
     
+
+    localStorage.setItem("Points" , points)
+    localStorage.getItem("Points")
+
 };
-
-function userStats(){
-    const userData = JSON.parse(localstorage.getItem("data")) || [];
-    
-    const dataEntry = { initials : userInitials, score : points };
-
-    userData.push(dataEntry);
-
-    localStorage.setItem("data", JSON.stringify(userData));
-    
-    console.log(userData)
-    
-    let template = " "
-    for (let i = 0; i < allData.legnth; i++) {
-        template += `<li> ${ userData[i].initials} ${userData[i].score}</li>`;
-    }
-    $("#highscores").append(template);
-    quizIndex = 0;
-
-    console.log(userData)
-}
-
 
 function gameOver() {
 clearInterval(secondsLeft);
-alert("QUIZ OVER");
- userInitials = prompt("ENTER YOUR INITIALS FOR BRAGGING RIGHTS!")
 
-   userStats()
-   console.log(points)
-   console.log(userInitials)
-   window.location.replace("index.html")
+userInitials = prompt("Enter your initials below for bragging rights!"); 
+
+    localStorage.setItem("Initials", userInitials)
+    localStorage.getItem("Initials")
+    window.location.replace("highscores.html")
+
 };
+
+console.log(points)

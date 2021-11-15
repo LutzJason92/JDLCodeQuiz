@@ -80,14 +80,6 @@ var penalty = 5;
 var secondsLeft = 20;
 var points = 0;
 
-
-
-
-
-
-
-
-
 //EventListener - button clicks
 document.querySelector("#startButton").addEventListener('click', startTimer);
 // document.querySelector(".buttons").onclick = function(){userChoices1()}

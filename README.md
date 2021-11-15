@@ -1,39 +1,62 @@
 # JDLCodeQuiz
 
-Unit 4 Homework Due 11.11.2021
+### Code Quiz Apllication
 
-Problems as of 11.11.21 1150pm
+## Image of Application
 
--changed from vanilla JS to Jquery this afternoon after class.
-will
--local storage not working
+![Screen Shot](./assets/images/APPScreenShot.png)
 
-Your Task
+### Problems as of 11.14.21 1130pm
+
+```md
+Struggling with appending a table of user initials and scores to highscores.html
+```
+
+## Task
+
 At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment—perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges.
 
 To help familiarize you with these tests and allow you to use the skills covered in this unit, this week’s homework invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface.
 
 This week’s coursework will equip you with all the skills you need to succeed in this assignment.
 
-User Story
+## User Story
+
+```md
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
+```
 
-Acceptance Criteria
+## Acceptance Criteria
+
+```MD
 GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
 
-![GitHubRepo](https://github.com/LutzJason92/JDLCodeQuiz)
+WHEN I click the start button
+[x]THEN a timer starts and I am presented with a question
+
+WHEN I answer a question
+[x]THEN I am presented with another question
+
+WHEN I answer a question incorrectly
+[x]THEN time is subtracted from the clock
+
+WHEN all questions are answered or the timer reaches 0
+[x]THEN the game is over
+
+WHEN the game is over
+[]THEN I can save my initials and my score
+```
+
+## Review
+
+```md
+You are required to submit the following for review:
+
+[x] The URL of the deployed application
 ![DeployedPage](https://lutzjason92.github.io/JDLCodeQuiz/)
 
-![ScreenShot](./assets/images/APPScreenShot.png)
+[x] The URL of the GitHub repository, with a unique name and a README describing the project
+![GitHubRepo](https://github.com/LutzJason92/JDLCodeQuiz)
+```
